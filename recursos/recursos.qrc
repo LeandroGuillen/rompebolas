@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>imagenes/amarilla.png</file>
+        <file>imagenes/apagar.png</file>
+        <file>imagenes/azul.png</file>
+        <file>imagenes/icono.png</file>
+        <file>imagenes/nada.png</file>
+        <file>imagenes/nuevopj.png</file>
+        <file>imagenes/preferencias.png</file>
+        <file>imagenes/roja.png</file>
+        <file>imagenes/rosa.png</file>
+        <file>imagenes/verde.png</file>
+    </qresource>
+</RCC>
