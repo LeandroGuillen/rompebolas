@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/bola">
+        <file>amarilla.png</file>
+        <file>azul.png</file>
+        <file>roja.png</file>
+        <file>rosa.png</file>
+        <file>verde.png</file>
+    </qresource>
+</RCC>

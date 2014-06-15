@@ -33,17 +33,20 @@ private:
 		int fila, col;
 	};
 	void meteNuevaColumna();
+
 	/**
 	 * Condicion para saber si se han de añadir nuevas
 	 * columnas por la izquierda.
 	 */
 	bool hayColumnasLibres();
+
 	/**
 	 * Comprueba si la partida se puede continuar o no,
 	 * basandose en si hay al menos dos bolas del mismo
 	 * color adyacentes.
 	 */
 	bool finPartida(); // NO IMPLEMENTADO
+
 	/**
 	 * Procedimiento recursivo que busca en la rejilla
 	 * hacia arriba, hacia abajo, hacia la izquierda y
@@ -51,24 +54,29 @@ private:
 	 * por las ramas en que las bolas son adyacentes.
 	 */
 	void encontrarAdyacentes(Posicion&);
+
 	/**
 	 * Intecambia el valor de dos enteros.
 	 */
 	void intercambia(int&, int&);
+
 	/**
 	 * Dado un tablero marca como borradas (borra) las bolas que habian
 	 * sido seleccionadas por encontrarAdyacentes.
 	 */
 	void borrarAdyacentes();
+
 	/**
 	 * Baja todas las bolas por "gravedad".
 	 */
 	void bajarColumnas();
+
 	/**
 	 * Mueve todos las bolas hacia la derecha en una fila.
 	 * @param v Vector que contiene las bolas.
 	 */
 	void moverDerecha(int *v);
+
 	/**
 	 * Mueve todas las bolas del tablero a la derecha.
 	 */
