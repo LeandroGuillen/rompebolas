@@ -61,6 +61,9 @@ Item {
                             var myY = _model.get(index).y
                             var type = _model.get(index).type
                             click(myX, myY, type)
+
+                            var resultado = obtenerAdyacentes(myX, myY, type, index)
+                            explotar(resultado)
                         }
 
                         onEntered: {
@@ -68,8 +71,8 @@ Item {
                             var myY = _model.get(index).y
                             var type = _model.get(index).type
 
-                            marcarAdyacentes(myX, myY, type, index)
-
+                            var resultado = obtenerAdyacentes(myX, myY, type, index)
+                            marcar(resultado.adyacentes)
                         }
                     }
                 }
@@ -77,7 +80,23 @@ Item {
         }
     }
 
-    function marcarAdyacentes(x, y, type, index){
+    function explotar(resultado)
+    {
+        console.log("Explotadas!")
+        score = score + Math.pow(2, resultado.puntos - 2)
+    }
+
+    function marcar(adyacentes)
+    {
+        adyacentes.forEach(function(res){
+            var e = _model.get(res.index)
+            e.visible = false
+            e.opacity = 0.5
+        })
+
+    }
+
+    function obtenerAdyacentes(x, y, type, index){
         var result = []
 
         result.push({index: index, objectName: "", x: x, y: y, type: type, selected: true})
@@ -89,14 +108,12 @@ Item {
             var j = result[i].index
         }
 
-        result.forEach(function(res){
-            _model.get(res.index).visible = false
-        })
-
-
         console.log((total - 1) + " bolas adyacentes")
 
-        score = score + Math.pow(2, total - 2)
+        return {
+            puntos: total,
+            adyacentes: result
+        }
     }
 
     function recursion(x, y, type, result)
